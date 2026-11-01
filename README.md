@@ -25,3 +25,5 @@ directory the workcell writes to (`wc store init runs` on the robot, where `outp
 on the workstation `wc store pull robot-host:/path/to/runs` copies the runs it does not have yet, and
 `wc store push robot-host:/path/to/runs artifact:<name>@<digest>` sends an artifact (a judge, a memory) the
 other way. Sealed artifacts are never overwritten; the same path holding different content is a conflict.
+
+Documentation (worldcurrent-docs, `uv run mkdocs serve -f docs/mkdocs.yml` from the workspace): [deployments repository](../docs/docs/configuration/deployments-repo.md), [deployment](../docs/docs/user-guide/deployment.md).
