@@ -1,4 +1,23 @@
-# \<lab\>-deployments (template)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg">
+    <img src=".github/assets/banner-light.svg" width="100%" alt="<lab>-deployments (template): your lab's private configs: workcells, calibration, safety limits and keep-out zones">
+  </picture>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-c8442d?style=flat-square"></a>
+  <img alt="Template repository" src="https://img.shields.io/badge/repository-template-171c22?style=flat-square">
+  <img alt="Configuration only" src="https://img.shields.io/badge/contents-configuration%20only-171c22?style=flat-square">
+  <img alt="3 workcells" src="https://img.shields.io/badge/workcells-3-5b6168?style=flat-square">
+</p>
+
+<p align="center">
+  <a href="https://hyloai.github.io/"><b>Website</b></a> ·
+  <a href="https://hyloai.github.io/hylo-docs/"><b>Docs</b></a> ·
+  <a href="https://hyloai.github.io/hylo-docs/getting-started/quickstart/"><b>Quickstart</b></a> ·
+  <a href="https://github.com/HyloAI"><b>All repositories</b></a>
+</p>
 
 Part of [Hylo](https://hyloai.github.io/), the stack for physical AI: configuration for the **runtime** layer.
 
@@ -17,6 +36,13 @@ hylo serve workcell --config workcells/sim_arm.yaml --port 8102
 hylo serve workcell --config workcells/so101.yaml --host 0.0.0.0 --port 8100 --token $HYLO_TOKEN
 ```
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/sync-dark.svg">
+    <img src=".github/assets/sync-light.svg" width="100%" alt="On the robot computer a workcell config names a runtime, which the execution profile resolves; hylo serve workcell records runs in the robot's store; the workstation pulls runs and pushes artifacts">
+  </picture>
+</p>
+
 Configs name runtimes (`remote: {runtime: robot}`), never paths: each machine's execution profile says where the
 runtime's venv is and which environment variables it needs (`hylo profile set-runtime robot --python ... --env ...`;
 bench's LIBERO setup registers `libero-sim` and `lerobot`). Keep tokens out of the repository (environment
@@ -29,6 +55,15 @@ on the workstation `hylo store pull robot-host:/path/to/runs` copies the runs it
 other way. Sealed artifacts are never overwritten; the same path holding different content is a conflict.
 
 Documentation (hylo-docs, `uv run mkdocs serve -f docs/mkdocs.yml` from the workspace): [deployments repository](../docs/docs/configuration/deployments-repo.md), [deployment](../docs/docs/user-guide/deployment.md).
+
+## The Hylo stack
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/stack-dark.svg">
+    <img src=".github/assets/stack-light.svg" width="100%" alt="The six layers of the Hylo stack; the deployments template configures the runtime layer">
+  </picture>
+</p>
 
 ## License
 
