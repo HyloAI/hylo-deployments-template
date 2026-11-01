@@ -1,7 +1,7 @@
 # A workcell with the simulated arm (no hardware): the full robot path (LeRobot Robot interface, real_robot
 # safety, hold-at-measured-pose, operator reset and verdict) on a laptop. Policy: the bring-up wave.
-#   wc serve policy --agent '{"type": "bringup.wave", "params": {"amplitude": 8}}' --port 8002
-#   wc serve workcell --config workcells/sim_arm.yaml --port 8102
+#   hylo serve policy --agent '{"type": "bringup.wave", "params": {"amplitude": 8}}' --port 8002
+#   hylo serve workcell --config workcells/sim_arm.yaml --port 8102
 name: sim-arm
 env:
   type: lerobot.robot
@@ -12,7 +12,7 @@ env:
     action_high: [120, 120, 120, 120, 170, 100]
     home: [0, -30, 60, 0, 0, 20]
     control_hz: 30
-policy: {url: "ws://127.0.0.1:8002/wc", protocol: wc}
+policy: {url: "ws://127.0.0.1:8002/hylo", protocol: hylo}
 runtime: {clock: wall, refill_steps: 5, max_hold_steps: 60, require_reset_confirm: true, verdict_timeout_s: 120}
 safety: {max_delta: 12.0}
 image_every: 5

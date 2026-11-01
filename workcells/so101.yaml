@@ -1,12 +1,12 @@
 # A real SO-101 follower arm through LeRobot (needs lerobot[feetech] in the robot venv, a calibrated arm and a
 # hardware e-stop within reach). The SafetyShield is a software layer, not a certified safety function: keep the
 # robot's own limits (max_relative_target, torque limits) and the physical e-stop in place.
-#   wc serve policy --config <experiment fine-tuned on this arm> --port 8000          # on the GPU machine
-#   wc serve workcell --config workcells/so101.yaml --host 0.0.0.0 --port 8100 --token $WC_TOKEN
+#   hylo serve policy --config <experiment fine-tuned on this arm> --port 8000          # on the GPU machine
+#   hylo serve workcell --config workcells/so101.yaml --host 0.0.0.0 --port 8100 --token $HYLO_TOKEN
 name: so101
 env:
   type: lerobot.robot
-  remote: {runtime: robot}              # the robot computer's venv with lerobot + feetech: wc profile set-runtime robot --python ...
+  remote: {runtime: robot}              # the robot computer's venv with lerobot + feetech: hylo profile set-runtime robot --python ...
   params:
     robot:
       type: so101_follower
@@ -17,7 +17,7 @@ env:
     home: [0, -90, 90, 0, 0, 10]
     home_steps: 90
     control_hz: 30
-policy: {url: "ws://gpu-box:8000/wc", protocol: wc}
+policy: {url: "ws://gpu-box:8000/hylo", protocol: hylo}
 runtime: {clock: wall, refill_steps: 10, max_hold_steps: 30, require_reset_confirm: true, verdict_timeout_s: 120}
 safety: {max_delta: 8.0}
 image_every: 5

@@ -1,12 +1,12 @@
 # A simulated workcell: LIBERO-10 driven by a remote policy, with the robot-side runtime (async chunks, hold,
 # watchdog, operator events). Start the policy first:
-#   wc serve policy --config ../bench/examples/configs/libero10_steered.yaml --port 8001
-#   wc serve workcell --config workcells/libero10_sim.yaml --port 8101
+#   hylo serve policy --config ../bench/examples/configs/libero10_steered.yaml --port 8001
+#   hylo serve workcell --config workcells/libero10_sim.yaml --port 8101
 # clock: virtual replays the measured inference latency in simulation; use wall on hardware.
 name: sim-libero10
 env:
   type: libero
-  remote: {runtime: libero-sim}         # this machine's profile (wc profile show); bench's envs/libero/setup.sh registers it
+  remote: {runtime: libero-sim}         # this machine's profile (hylo profile show); bench's envs/libero/setup.sh registers it
 benchmark:
   type: libero
   params:
@@ -14,8 +14,8 @@ benchmark:
     n_validation: 10
     n_heldout: 0
 policy:
-  url: ws://127.0.0.1:8001/wc
-  protocol: wc
+  url: ws://127.0.0.1:8001/hylo
+  protocol: hylo
 runtime:
   clock: virtual
   refill_steps: 10
