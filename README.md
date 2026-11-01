@@ -27,3 +27,7 @@ on the workstation `hylo store pull robot-host:/path/to/runs` copies the runs it
 other way. Sealed artifacts are never overwritten; the same path holding different content is a conflict.
 
 Documentation (hylo-docs, `uv run mkdocs serve -f docs/mkdocs.yml` from the workspace): [deployments repository](../docs/docs/configuration/deployments-repo.md), [deployment](../docs/docs/user-guide/deployment.md).
+
+## License
+
+Apache License 2.0 (see [LICENSE](LICENSE)). Copyright 2026 Hylo AI.
