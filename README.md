@@ -1,5 +1,7 @@
 # \<lab\>-deployments (template)
 
+Part of [Hylo](https://hyloai.github.io/), the stack for physical AI: configuration for the **runtime** layer.
+
 Template for a lab's own, private repository of what runs on its robots: one workcell config per robot or
 simulator, with its calibration, safety limits and keep-out zones, and how it reaches its policy server. It holds
 configuration only; components are named by what the Hylo repositories register.
