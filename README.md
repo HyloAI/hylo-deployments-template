@@ -25,6 +25,14 @@ Template for a lab's own, private repository of what runs on its robots: one wor
 simulator, with its calibration, safety limits and keep-out zones, and how it reaches its policy server. It holds
 configuration only; components are named by what the Hylo repositories register.
 
+To deploy a robot-skill implementation developed elsewhere, record the intended agent or campaign version, pinned artifact references,
+required runtime packages and robot calibration in the deployment configuration. Verify compatibility and safety
+on the target workcell before use. Development sessions and their raw outputs belong in the experiment store;
+this repository holds the configuration needed to run the selected version.
+
+See [Robot skills and their lifecycle](https://hyloai.github.io/hylo-docs/user-guide/skills/) for how deployment
+configuration relates to development, verification and reusable program-skill records.
+
 | File | Workcell |
 |---|---|
 | `workcells/sim_arm.yaml` | a simulated arm (no hardware): bring-up and operator flow |
